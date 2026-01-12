@@ -1,0 +1,29 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: moonsuit-org-production
+spec:
+  secretName: moonsuit-org-production-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: moonsuit.org
+  dnsNames:
+    - moonsuit.org
+    - '*.moonsuit.org'
+sops:
+  age:
+    - recipient: age1w69hxskvxje87wnzvwrkvkl6re2vm27zts905jnzr5g78a05m47q94ejzx
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyb05DUG1JUUNrOUJwdFFv
+        TEVuZlA5ZmdIc3RLUlh6OWxhanhDOGRFRWw0Cm9oRXViZXhIalZDMmJ2L0VkdTBX
+        S1A1bVNhVkJCOGlPMVAzZG9nQ0prQzgKLS0tIGZ5dlBLejNiK3FVMDBrWXFBczBP
+        Z2ZsYzFWcm5QZ1JmdHI5T1RKQTJuUjgKiqbS8NubAo6k8du37IttprUpv8zfHN/R
+        h6nUgF909znZQLOXyqnLEbu6GofFeBSHSqEbM1s3EPqoCiDs8Xfp/A==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2026-01-12T22:59:50Z"
+  mac: ENC[AES256_GCM,data:9R1gXOPCC1cNCSWUE5UOUsGjPK4fgRnmHp8iWnnmOQii5fb5vANyRFUx10PjShKsI2hhiEfA7IvVEVgeGdfuSMWoXsVMnqyG7AvJjOGFUn4dbfuN7oMzyOfXwlVb8FBuSNSLc4wf0/kgiIj6p0kcZXyUIB3nm3tdEhOljy1GWQk=,iv:edTsgqoptm2HhQRAJuKtG/984s5gql19Q2/E1SGfS8I=,tag:AYWvOevduo9lRfglFfAKwA==,type:str]
+  encrypted_regex: ^(data|stringData)$
+  mac_only_encrypted: true
+  version: 3.11.0

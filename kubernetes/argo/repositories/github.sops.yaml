@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github
+  namespace: argo-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: ENC[AES256_GCM,data:CWyS,iv:VrOs7sBMm9sIidmmX22BeEPW3wbi5nX8pHifDblyZKw=,tag:QA4hT4AdP+2wbE7cYgy2ow==,type:str]
+  url: ENC[AES256_GCM,data:SG3wY9GIZUlc5x9/vJ8IV0SaSi7w6HolBzZYgGLYdZHkBEVH3xkgori92ghnVg==,iv:ECIoxR3QKqOQnCOV2SCPyevjlC0VVmSzmWB9txcGu1M=,tag:LNwsW6GO+VjYRbSVvtGpqw==,type:str]
+sops:
+  age:
+    - recipient: age1w69hxskvxje87wnzvwrkvkl6re2vm27zts905jnzr5g78a05m47q94ejzx
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHYUJhbUtNRm1vcnlBS2dm
+        U0U1Q1NkZkNsMnM0VmRMVGRZTEZSQ3lzaUJFCndiS1M1bWRzcVovY1pXYUt3R2N6
+        SUF5UWxYNDVkWnYwb3J6RHR2K25tUVkKLS0tIDI0VkJtTmROMGNlWXNkcFZxOEV2
+        Y3NNS3BITGNjbDFnUXV0YjJXblorOXMKLvbmfKtneinhGSjZc3bCUofXd2EQ8GRc
+        W99BCB2Z6A+gMSGHeklJG/QCZii0Rr/uBn/6RGasgiSj1B9fOhdnGA==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2026-01-12T22:59:50Z"
+  mac: ENC[AES256_GCM,data:31GM2MKQ8ySTyP6z21cmEZJIUklsKKxSgDdpSV5wnes97rPhKmj2uoBh920IqXtCKxIrbqFnwYthV1GwHWhlJ6oxMDLVE51hRawcd1nPfwoFYJv4V5uMV0cvMJ0WVjaN7A9MqDf1SISZ5q1G6zvxU7JHbmARReHP/BYldMRe+hU=,iv:ZdAWLpN9TxrK8opJd2YRb2YWZLBp8+q8VX2SqplYXsg=,tag:vBhbBTHUqZkUb1T+DZUl4g==,type:str]
+  encrypted_regex: ^(data|stringData)$
+  mac_only_encrypted: true
+  version: 3.11.0

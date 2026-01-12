@@ -1,0 +1,28 @@
+fullnameOverride: k8s-gateway
+domain: moonsuit.org
+ttl: 1
+service:
+  type: LoadBalancer
+  port: 53
+  annotations:
+    io.cilium/lb-ipam-ips: 10.10.10.100
+  externalTrafficPolicy: Cluster
+watchedResources:
+  - HTTPRoute
+  - Service
+sops:
+  age:
+    - recipient: age1w69hxskvxje87wnzvwrkvkl6re2vm27zts905jnzr5g78a05m47q94ejzx
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxU24zQUo0V2t5eEN6YlNm
+        TjI5emNzSlZmUDE4STJXRkpUaTRKNkdhdVFBCjBJSnNZN2NlL3ZJSCt4QmdXR05j
+        RG44TStyclRBeGNoUVJ3WlhkUDFFaXcKLS0tIGxUSTYxQlc2TTN2N1J3cmtzc0dT
+        Z1NWYzliZC95TklJNXNtWnpXVzc5UmMK4yXg/aj6hJOn/V2kOwraeGqSjcTsDB9f
+        LSpa+bkjTuY26RNZfrjgcrZT1lAFtxcq/ZrJMzXpgopviQYiBnBw1g==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2026-01-12T22:59:50Z"
+  mac: ENC[AES256_GCM,data:sFyXm67nq3IXwKe/VXpsI67D5/7+cjF1xd/yYN0Tm8qznoHBr592tQt7LidNQ878TcSMaihtcbQBOfuGpBnCXx/o4eA92XX5YrFhpBLtk08sSzqF5f3GB/1XkR64Rb9Jt2Vtrj4wgdrVrAP2yaGtrWfafowcMOONYFr/PhPtYAI=,iv:dAekTRWgSUKK2RBJZQjjwQDFyaxmYcUNi/UNlLLXeCk=,tag:4BJzKcBVuO9k0mHJEa5eyw==,type:str]
+  encrypted_regex: ^(data|stringData)$
+  mac_only_encrypted: true
+  version: 3.11.0
